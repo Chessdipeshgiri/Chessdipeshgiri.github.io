@@ -3,11 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="logic.js"></script>
     <title>Document</title>
 </head>
 <body>
-   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat est ipsa facilis esse et, itaque eaque illum quis, error corrupti unde excepturi natus. Quibusdam qui ullam quidem. Minima, odio? Doloribus.</p> 
-   <h1>Hello World I am Dipesh</h1>
-   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est non fugiat nihil nesciunt, nam vitae iusto voluptatem sit velit in necessitatibus dolorum at, aperiam voluptates dolorem repellat odio laboriosam qui.</p>
+        <table class="calculator">
+            <tr>
+                <td colspan="4"><input type="text" id="input" class="input" readonly oninput="updatePreview()"></td>
+            </tr>
+            <tr>
+                <td colspan="4"><div id="preview" class="preview">Preview: </div></td> <!-- Preview display -->
+            </tr>
+            <tr class="operators">
+                <td><button onclick="appendOperator('+')">+</button></td>
+                <td><button onclick="appendOperator('-')">-</button></td>
+                <td><button onclick="appendOperator('*')">&times;</button></td>
+                <td><button onclick="appendOperator('/')">&divide;</button></td>
+            </tr>
+            <tr class="numbers">
+                <td><button onclick="appendNumber(7)">7</button></td>
+                <td><button onclick="appendNumber(8)">8</button></td>
+                <td><button onclick="appendNumber(9)">9</button></td>
+                <td rowspan="4"><button id="result" onclick="calculate()">=</button></td>
+            </tr>
+            <tr class="numbers">
+                <td><button onclick="appendNumber(4)">4</button></td>
+                <td><button onclick="appendNumber(5)">5</button></td>
+                <td><button onclick="appendNumber(6)">6</button></td>
+            </tr>
+            <tr class="numbers">
+                <td><button onclick="appendNumber(1)">1</button></td>
+                <td><button onclick="appendNumber(2)">2</button></td>
+                <td><button onclick="appendNumber(3)">3</button></td>
+            </tr>
+            <tr class="numbers">
+                <td><button onclick="appendNumber(0)">0</button></td>
+                <td><button onclick="appendDot()">.</button></td>
+                <td><button id="clear" onclick="clearInput()">C</button></td>
+            </tr>
+        </table>
 </body>
-</html> 
+</html>
